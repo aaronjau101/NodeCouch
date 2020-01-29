@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Accounts Test</title>
+</head>
+<body>
+<h3>Sign In</h3>
+<form method="post" action="/account/signin">
+	<input type="text" name="username" placeholder="Username" autocomplete="off">
+	<br><br>
+	<input type="text" name="password" placeholder="Password" autocomplete="off">
+	<br><br>
+	<input type="submit" value="Sign In">
+</form>
+
+<hr>
+
+<h3>Create New Account</h3>
+<form method="post" action="/account/add">
+	<input type="text" name="username" placeholder="Username" autocomplete="off">
+	<br><br>
+	<input type="text" name="password" placeholder="Password" autocomplete="off">
+	<br><br>
+	<input type="submit" value="Create Account">
+</form>
+
+<hr>
+
+<h3>Accounts</h3>
+<ul>
+<% accounts.forEach(function(account){ %>
+	<li>
+		<h4><%= account.username %></h4>
+		<h4><%= account.password %></h4>
+	</li>
+<% }) %>
+</ul>
+</body>
+</html>
